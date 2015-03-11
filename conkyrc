@@ -83,8 +83,8 @@ ${font Droid Sans:bold:size=12}${color f39c12}Sistema de arquivos ${color 34495e
 ${color grey}Linux - / $color${alignr}${fs_used /}/${fs_size /} 
 ${color grey}Em uso $color${alignr}${fs_used_perc}% ${fs_bar 5, 200 /}
 ${color grey}Networking:
-${color grey}Windows 7 - C: $color${alignr}${fs_used /media/henrique/D28CB1ED8CB1CC6B/}/${fs_size /media/henrique/D28CB1ED8CB1CC6B/}
-${color grey}Em uso $color${alignr}${fs_used_perc /media/henrique/D28CB1ED8CB1CC6B/}% ${fs_bar 5, 200 /media/henrique/D28CB1ED8CB1CC6B/}
+${color grey}Windows 7 - C: $color${alignr}${fs_used /media/MYDISK/}/${fs_size /media/MYDISK/}
+${color grey}Em uso $color${alignr}${fs_used_perc /media/MYDISK/}% ${fs_bar 5, 200 /media/MYDISK/}
 ${color grey}Atividade I/O do disco $color ${alignr}${diskio}
 ${diskiograph 30}
 
