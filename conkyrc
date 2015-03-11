@@ -1,0 +1,108 @@
+# Conky, a system monitor, based on torsmo
+#
+# Any original torsmo code is licensed under the BSD license
+#
+# All code written since the fork of torsmo is licensed under the GPL
+#
+# Please see COPYING for details
+#
+# Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+# Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+# All rights reserved.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+ 
+alignment top_right
+double_buffer yes
+background no
+border_width 2
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont Droid Sans:size=10
+gap_x 10
+gap_y 60
+minimum_size 300 600
+maximum_width 770
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type override
+own_window_transparent yes
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+ 
+TEXT
+${font Droid Sans:bold:size=12}${color f39c12}Sistema ${color 34495e}${hr 2} ${font}
+${color grey}Computador: ${alignr}$color $nodename
+${color grey}Kernel: $color ${alignr}$sysname - $kernel
+${color grey}Arquitetura: ${alignr}$color $machine
+${color grey}Ligado a $color ${alignr}$uptime
+ 
+${font Droid Sans:bold:size=12}${color f39c12}Processador ${color 34495e}${hr 2} ${font}
+${color grey}AMD Phenom II X4: $color ${alignr}$freq_g GHz 
+Core 1 ${alignr}${cpu cpu0}% ${cpubar cpu0 5, 200}
+Core 2 ${alignr}${cpu cpu1}% ${cpubar cpu1 5, 200}
+Core 3 ${alignr}${cpu cpu2}% ${cpubar cpu2 5, 200}
+Core 4 ${alignr}${cpu cpu3}% ${cpubar cpu3 5, 200}
+${cpugraph 30} 
+
+${font Droid Sans:bold:size=12}${color f39c12}Memória ${color 34495e}${hr 2} ${font}
+${color grey}Memória RAM $color ${alignr}$mem/$memmax
+${color grey}Em uso $color ${alignr} $memperc% ${membar 5, 200}
+${memgraph 30}
+${color grey}Memória Swap:$color ${alignr} $swap/$swapmax
+${color grey}Em uso $color ${alignr} $swapperc% ${swapbar 5, 200}
+ 
+${font Droid Sans:bold:size=12}${color f39c12}Sistema de arquivos ${color 34495e}${hr 2} ${font}
+${color grey}Linux - / $color${alignr}${fs_used /}/${fs_size /} 
+${color grey}Em uso $color${alignr}${fs_used_perc}% ${fs_bar 5, 200 /}
+${color grey}Networking:
+${color grey}Windows 7 - C: $color${alignr}${fs_used /media/henrique/D28CB1ED8CB1CC6B/}/${fs_size /media/henrique/D28CB1ED8CB1CC6B/}
+${color grey}Em uso $color${alignr}${fs_used_perc /media/henrique/D28CB1ED8CB1CC6B/}% ${fs_bar 5, 200 /media/henrique/D28CB1ED8CB1CC6B/}
+${color grey}Atividade I/O do disco $color ${alignr}${diskio}
+${diskiograph 30}
+
+${font Droid Sans:bold:size=12}${color f39c12}Rede ${color 34495e}${hr 2} ${font} $color
+${color grey}Endereço local: $color${alignr}${addr}
+${upspeedgraph eth0 25, 150 FFFFFF FFFFFF}${goto 190}${downspeedgraph eth0 25, 150 FFFFFF FFFFFF}
+${color grey} Up: $color${upspeed eth0} ${color grey}${goto 190}Down:$color ${downspeed eth0}
+${color grey} Enviados: $color${totalup eth0} ${color grey}${goto 190}Recebidos:$color ${totaldown eth0}
+
+${font Droid Sans:bold:size=12}${color f39c12}Processos ${color 34495e}${hr 2} ${font} $color
+${color grey}Processos: $color${alignr}${processes}
+${color grey}Executando: $color${alignr}${running_processes} 
+
+${color grey}Nome ${goto 200}PID${goto 250}CPU%${goto 300}MEM%
+${color lightgrey} ${top name 1}${goto 200}${top pid 1}${goto 250}${top cpu 1}${goto 300}${top mem 1}
+${color lightgrey} ${top name 2}${goto 200}${top pid 2}${goto 250}${top cpu 2}${goto 300}${top mem 2}
+${color lightgrey} ${top name 3}${goto 200}${top pid 3}${goto 250}${top cpu 3}${goto 300}${top mem 3}
+${color lightgrey} ${top name 4}${goto 200}${top pid 4}${goto 250}${top cpu 4}${goto 300}${top mem 4}
+${color lightgrey} ${top name 5}${goto 200}${top pid 5}${goto 250}${top cpu 5}${goto 300}${top mem 5}
+${color lightgrey} ${top name 6}${goto 200}${top pid 6}${goto 250}${top cpu 6}${goto 300}${top mem 6}
+
